@@ -1,0 +1,5 @@
+-- Find the titles of all movies directed by Steven Spielberg
+
+SELECT title 
+FROM movie m 
+WHERE m.director = 'Steven Spielberg';
