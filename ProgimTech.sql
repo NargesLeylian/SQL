@@ -8,7 +8,7 @@ ALTER DATABASE Testdb11 SET SINGLE_USER WITH ROLLBACK IMMEDIATE
 DROP DATABASE Testdb11
 */
 
---Create Table
+--Create Table And Foregn Key
 USE Sample1
 Go
 
@@ -28,3 +28,8 @@ CREATE TABLE tblGender
 
 ALTER TABLE tblPerson ADD CONSTRAINT tblPerson_GenderID_FK
 FOREIGN KEY (GenderID) REFERENCES tblGender(ID)
+
+-- Add Default Constraint
+ALTER TABLE tblPerson 
+ADD CONSTRAINT DF_tblPerson_GenderID
+DEFAULT 3 FOR GenderID
