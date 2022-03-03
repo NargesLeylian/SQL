@@ -33,3 +33,15 @@ FOREIGN KEY (GenderID) REFERENCES tblGender(ID)
 ALTER TABLE tblPerson 
 ADD CONSTRAINT DF_tblPerson_GenderID
 DEFAULT 3 FOR GenderID
+
+-- Add Constraint not null
+ALTER TABLE tblPerson
+ALTER COLUMN GendeID INT NOT NULL
+
+-- Add Check Constraint
+ALTER TABLE tblPerson
+ADD CONSTRAINT CK_tblPerson_Age CHECK (Age > 0 AND Age < 150)
+
+-- Drop Check Constraint 
+ALTER TABLE tblPerson
+DROP CK_tblPerson_Age
