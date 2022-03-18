@@ -45,3 +45,18 @@ ADD CONSTRAINT CK_tblPerson_Age CHECK (Age > 0 AND Age < 150)
 -- Drop Check Constraint 
 ALTER TABLE tblPerson
 DROP CK_tblPerson_Age
+
+
+-- Add Unique Constraint
+ALTER TABLE tblPerson
+ADD CONSTRAINT UQ_tblPerson_Email UNIQUE (Email)
+
+-- Drop Constraint
+ALTER TABLE tblPerson 
+DROP CONSTRAINT UQ_tblPerson_Email
+
+-- Diff between Uniq key and Primary key
+/*
+ A table can have only one primary key, and can have more than one uniq key
+ Primary key can not be null, but uniq key can be null
+*/
